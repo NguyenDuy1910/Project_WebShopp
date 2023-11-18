@@ -14,6 +14,10 @@ public class User {
     @Column(name="name", length = 100)
     private String name;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="role_id", referencedColumnName = "role_id")
+    private Role role;
+
     @Column (name="password", length = 150, nullable = false)
     private String password;
     @Column (name="phone_number", length = 10, nullable = false)
