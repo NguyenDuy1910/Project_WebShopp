@@ -139,19 +139,27 @@
         </dependency>
 
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <!--suppress UnresolvedMavenProperty -->
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.8</version>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <!--suppress UnresolvedMavenProperty -->
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+
+
+
+        <!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter-api</artifactId>-->
+<!--            &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
+<!--            <version>${junit.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter-engine</artifactId>-->
+<!--            &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
+<!--            <version>${junit.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.google.code.gson</groupId>

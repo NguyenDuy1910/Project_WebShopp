@@ -7,8 +7,8 @@ public class UserDTO {
     @JsonProperty("name")
     private String name;
     @JsonProperty("role_id")
-    private Role role;
-    @JsonProperty("password")
+    private Long roleId;
+    @JsonProperty("address")
     private String password;
     @JsonProperty("phone_number")
     private String phoneNumber;
@@ -25,12 +25,12 @@ public class UserDTO {
         this.name = name;
     }
 
-    public Role getRole() {
-        return role;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
     public String getPassword() {

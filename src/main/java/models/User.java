@@ -73,4 +73,14 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public User(Role role, String name, String password, String phoneNumber, Date birthDate, String email) {
+        this.id = id;
+        this.role = role;
+        this.name = name;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        BirthDate = birthDate;
+        this.email = email;
+    }
 }
