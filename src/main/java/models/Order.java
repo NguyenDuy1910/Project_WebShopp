@@ -13,6 +13,13 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name="order_id")
     private Long id;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_detail_id", referencedColumnName = "order_detail_id")
+    private List<OrderDetail> listOrderDetails = new ArrayList<>();
+
     @Column (name="date")
     private Date date;
     @Column(name="estimateDate")
@@ -23,12 +30,6 @@ public class Order {
     private String status;
     @Column(name="note")
     private String note;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private User user;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_detail_id", referencedColumnName = "order_detail_id")
-    private List<OrderDetail> listOrderDetails = new ArrayList<>();
 
     public Long getId() {
         return id;

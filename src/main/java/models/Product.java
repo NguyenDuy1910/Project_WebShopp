@@ -10,11 +10,12 @@ public class Product {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="product_id")
     private Long id;
-    @Column (name="name", nullable = false)
-    private String name;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="brand_id", referencedColumnName = "brand_id")
     private Brand brand;
+    @Column (name="name", nullable = false)
+    private String name;
+
     @Column (name = "price")
     private double price;
     @Column(name="color")

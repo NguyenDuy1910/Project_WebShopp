@@ -1,38 +1,25 @@
-package models;
+package dtos;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import models.Product;
+import models.User;
+
 import javax.persistence.*;
-import java.util.*;
+import java.util.Date;
 
-@Entity
-@Table(name="reviews")
-public class Review {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name="review_id")
-    private long id;
-
-    @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+public class ReviewDTO {
+    @JsonProperty("user_id")
     private User user;
-    @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", referencedColumnName = "product_id")
+    @JsonProperty("product_id")
     private Product product;
-    @Column(name = "content")
+    @JsonProperty("content")
     private String content;
-    @Column(name = "rating")
+    @JsonProperty("rating")
     private Integer rating;
-    @Column(name = "date")
+    @JsonProperty("date")
     private Date date;
-    @Column(name = "characteristic")
+    @JsonProperty("characteristic")
     private String characteristic;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public User getUser() {
         return user;

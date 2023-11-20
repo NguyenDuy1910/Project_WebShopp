@@ -11,12 +11,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
-    @Column(name="name", length = 100)
-    private String name;
-
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="role_id", referencedColumnName = "role_id")
     private Role role;
+    @Column(name="name", length = 100)
+    private String name;
 
     @Column (name="password", length = 150, nullable = false)
     private String password;
