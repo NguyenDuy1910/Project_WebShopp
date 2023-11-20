@@ -1,19 +1,14 @@
 package repositories;
 
-import models.Role;
+import models.Brand;
 import org.hibernate.Session;
 import utility.HibernateUtility;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
-public class RoleRepository {
-    @PersistenceContext
-    private EntityManager entityManager;
-    public Role findById(Long Roleid){
+public class BrandRepositoty {
+    public Brand findById(Long Brandid){
         Session session = HibernateUtility.factory.openSession();
         try{
-            return session.get(Role.class, Roleid);
+            return session.get(Brand.class, Brandid);
         } catch (Exception e){
             e.printStackTrace();
         } finally {

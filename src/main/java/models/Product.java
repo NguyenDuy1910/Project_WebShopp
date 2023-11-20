@@ -15,7 +15,6 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="brand_id", referencedColumnName = "brand_id")
     private Brand brand;
-
     @Column (name = "price")
     private double price;
     @Column(name="color")
@@ -24,7 +23,7 @@ public class Product {
     private double storage;
     @Column(name="screen_size")
     private double screenSize;
-    @Column(name="resoluntion")
+    @Column(name="resolution")
     private String resolution;
     @Column(name="cpu")
     private String cpu;
